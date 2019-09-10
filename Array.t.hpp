@@ -10,6 +10,7 @@
 
 namespace WMurphy {
 
+    // template Array class
     template <typename T>
     Array<T>::Array()=default;
 
