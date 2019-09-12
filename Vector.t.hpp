@@ -68,4 +68,28 @@ namespace WMurphy {
         }
     }
 
+    template <typename T>
+    Vector<T>& Vector<T>::operator=(const Vector<T>&) {
+
+    }
+
+    template <typename T>
+    T Vector<T>::operator[](int index) const {
+        if (index < this->size()) {
+            return *(this->_data + index);
+        }
+    }
+
+    template <typename T>
+    T& Vector<T>::operator[](int index) {
+        if (index < this->size()) {
+            return *(this->_data + index);
+        }
+    }
+
+    template <typename T>
+    bool Vector<T>::empty() const noexcept {
+        return (this->_size == 0);
+    }
+
 }

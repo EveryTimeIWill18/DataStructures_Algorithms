@@ -30,6 +30,10 @@ namespace WMurphy {
         int size() const noexcept;
         size_type capacity() const;
         void push_back(const T& v);
+        Vector<T>&operator=(const Vector<T>&);
+        T operator[](int index) const;
+        T&operator[](int index);
+        bool empty() const noexcept;
     };
 }
 

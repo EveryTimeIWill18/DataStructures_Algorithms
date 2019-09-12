@@ -35,9 +35,15 @@ int main() {
     WMurphy::Vector<double> v3(4, 10);
     WMurphy::Vector<double> v5 = v3;
 
+
     std::cout << "v5 size == " << v5.size() << std::endl;
 
     auto index_value = WMurphy::LinearSearch(3, v1.data(), v1.size());
+    v5.push_back(100.1);
+    std::cout << "v5 size == " << v5.size() << std::endl;
+
+    std::cout << "v5 capacity == " << v5.capacity() << std::endl;
+
 
     return 0;
 }
