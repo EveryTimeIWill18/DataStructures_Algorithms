@@ -61,7 +61,7 @@ namespace WMurphy {
     template <typename T>
     void Vector<T>::push_back(const T& v) {
         if (this->size() == this->capacity()) {
-            std::cout << "WMurphy::Vector<T>.resize() not yet implemented." << tsd::endl;
+            std::cout << "WMurphy::Vector<T>.resize() not yet implemented." << std::endl;
         } else {
             *(this->_data + this->num_elements) = v;
             this->num_elements++;
