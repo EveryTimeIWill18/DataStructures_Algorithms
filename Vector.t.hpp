@@ -26,14 +26,14 @@ namespace WMurphy {
             this->_capacity = capacity;
             this->_data = static_cast<T*>(malloc(this->_capacity* sizeof(T)));
         }
-    }
+    } // explicit constructor
 
     template <typename T>
     Vector<T>::~Vector() {
         // free memory allocated for this->_data;
         free(_data);
         std::cout << "Destroying WMurphy::Vector ..." << std::endl;
-    }
+    } // destructor
 
     template <typename T>
     Vector<T>::Vector(const WMurphy::Vector<T> &_vector) {
@@ -45,8 +45,21 @@ namespace WMurphy {
         for (int i=0; i < this->_capacity; i++) {
             *(this->_data + i) = *(_vector._data + i);
         }
+    } // copy constructor
 
-    }
+    template <typename T>
+    Vector<T>::Vector(WMurphy::Vector<T> &&_vector) {
+        this->_data = _vector._data;
+        this->_size = _vector._size;
+        this->_capacity = _vector._capacity;
+        this->num_elements = _vector.num_elements;
+
+        // clear source vector
+        free(_vector._data);
+        _vector.num_elements = 0;
+        _vector._capacity = 0;
+        _vector._size = 0;
+    } // move constructor
 
     template <typename T>
     int Vector<T>::size() const noexcept {
@@ -91,5 +104,7 @@ namespace WMurphy {
     bool Vector<T>::empty() const noexcept {
         return (this->_size == 0);
     }
+
+
 
 }

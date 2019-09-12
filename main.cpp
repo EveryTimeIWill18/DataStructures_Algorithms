@@ -4,6 +4,7 @@
 #include "Array.t.hpp"
 #include "SearchAlgorithms.h"
 #include "Vector.t.hpp"
+#include "Point.h"
 
 
 
@@ -43,7 +44,6 @@ int main() {
     std::cout << "v5 size == " << v5.size() << std::endl;
 
     std::cout << "v5 capacity == " << v5.capacity() << std::endl;
-
 
     return 0;
 }

@@ -27,6 +27,8 @@ namespace WMurphy {
         explicit Vector(size_type size, size_type capacity);
         ~Vector();  // destructor
         Vector(const Vector<T> &_vector); // copy constructor
+        Vector(Vector<T>&& _vector); // move constructor
+
         int size() const noexcept;
         size_type capacity() const;
         void push_back(const T& v);
@@ -34,6 +36,7 @@ namespace WMurphy {
         T operator[](int index) const;
         T&operator[](int index);
         bool empty() const noexcept;
+
     };
 }
 

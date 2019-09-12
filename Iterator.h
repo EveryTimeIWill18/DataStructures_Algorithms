@@ -11,7 +11,10 @@ namespace WMurphy {
 
     template <typename T>
 class Iterator : public std::iterator<std::random_access_iterator_tag,
-        T, ptrdiff_t , T*, T&> {
+        T          // value type
+        ,ptrdiff_t // difference type
+        ,T*        // pointer
+        ,T&> {     // reference
 
     };
 }
