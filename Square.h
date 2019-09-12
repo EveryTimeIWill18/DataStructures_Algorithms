@@ -15,5 +15,5 @@ namespace WMurphy {
     };
 
 }
-
+ //
 #endif //DATASTRCTURES_ALGORITHMS_SQUARE_H
