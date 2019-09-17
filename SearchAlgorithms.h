@@ -18,6 +18,16 @@ namespace WMurphy {
             }
         return ValueNotFound;
     }
+
+    int BinarySearch(int element, const int* A, int size) {
+
+
+        return 1;
+    }
+
+
+
+
 }
 
 #endif //DATASTRCTURES_ALGORITHMS_LINEAR_SEARCH
