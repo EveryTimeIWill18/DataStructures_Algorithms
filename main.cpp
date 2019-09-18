@@ -134,6 +134,28 @@ int * selection_sort(int A[], int length) {
 
 
 
+int * shell_sort(int A[], int length) {
+    int gap = length / 2;
+
+    while (gap > 0) {
+        for (int i=gap; i < length; i++) {
+            int j = i;
+            int temp = A[i];
+            while (j >= gap && A[j-gap] > temp) {
+                A[j] = A[j-gap];
+                j -= gap;
+            }
+            A[j] = temp;
+        }
+        gap = gap / 2;
+    }
+
+    return A;
+}
+
+
+
+
 
 
 
@@ -193,6 +215,7 @@ int main() {
     int *b_sort;
     int *i_sort;
     int *s_sort;
+    int *shell;
 
 
     b_sort = bubble_sort(array, 10);
@@ -227,6 +250,18 @@ int main() {
     WMurphy::BinaryTree<int> b_tree = WMurphy::BinaryTree(10);
 
     std::cout << "b_tree data = " << b_tree.getData() << std::endl;
+
+
+    int shell_data[8] = {19, 2, 31, 45, 30, 11, 121, 27};
+
+    shell = shell_sort(shell_data, 8);
+    std::cout << "Shell Sort\n-----------" << std::endl;
+    for(int i=0; i < 8; i++) {
+        std::cout << *(shell + i) << "\t";
+    }
+    std::cout << std::endl;
+
+
 
     return 0;
 }
